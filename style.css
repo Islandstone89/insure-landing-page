@@ -1,0 +1,147 @@
+
+/* CSS RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+:is(ul, ol) {
+  list-style: none;
+  padding: 0;
+}
+
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* Avoid orphans on paragraphs */
+p {
+    text-wrap: pretty;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* FONTS */
+
+@font-face {
+    font-family: 'DM Serif Display';
+    src: url(assets/fonts/DMSerifDisplay-Regular.woff2) format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url(assets/fonts/Karla-Regular.woff2) format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url(assets/fonts/Karla-Bold.woff2) format("woff2");
+    font-weight: 700;
+}
+
+/* CUSTOM PROPERTIES */
+
+:root {
+    /* COLORS */
+    --clr-dark-violet: hsl(256, 26%, 20%);
+    --clr-grayish-blue: hsl(216, 30%, 68%);
+
+    --clr-very-dark-violet: hsl(270, 9%, 17%);
+    --clr-dark-grayish-violet: hsl(273, 4%, 51%);
+    --clr-very-light-gray: hsl(0, 0%, 98%);
+
+    /* TYPOGRAPHY */
+    --ff-dm-serif-display: 'DM Serif Display';
+    --ff-karla: 'Karla';
+    --fw-400: 400;
+    --fw-700: 700;
+}
+
+/* UTILITIES */
+
+.flow {
+    --flow-space: 2em;
+}
+
+.flow > * + * {
+    margin-block-start: var(--flow-space, 1em);
+}
+
+.serif {
+    font-family: var(--ff-dm-serif-display);
+    font-weight: var(--fw-400);
+}
+
+/* GENERAL STYLING */
+
+body {
+    font-family: var(--ff-karla);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__list {
+    display: flex;
+    gap: 1rem;
+}
