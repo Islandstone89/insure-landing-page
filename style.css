@@ -21,7 +21,7 @@ figure, blockquote, dl, dd {
   margin: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+/* Remove list styles on ul, ol elements */
 :is(ul, ol) {
   list-style: none;
   padding: 0;
@@ -45,7 +45,7 @@ p {
     text-wrap: pretty;
 }
 
-/* A elements that don't have a class get default styles */
+
 a {
   text-decoration-skip-ink: auto;
   color: currentColor;
@@ -106,6 +106,7 @@ textarea:not([rows]) {
     --clr-very-dark-violet: hsl(270, 9%, 17%);
     --clr-dark-grayish-violet: hsl(273, 4%, 51%);
     --clr-very-light-gray: hsl(0, 0%, 98%);
+    --clr-white: hsl(0, 0%, 100%);
 
     /* TYPOGRAPHY */
     --ff-dm-serif-display: 'DM Serif Display';
@@ -129,10 +130,33 @@ textarea:not([rows]) {
     font-weight: var(--fw-400);
 }
 
+
+
+.btn {
+    --border-color: var(--clr-white);
+    border: 2px solid var(--border-color);
+    padding: .5em 1.5em;
+    display: inline-block;
+}
+
+.btn:first-of-type {
+    --border-color: var(--clr-very-dark-violet);
+    
+}
+
 /* GENERAL STYLING */
 
 body {
     font-family: var(--ff-karla);
+}
+
+:is(.header, .footer) {
+    text-transform: uppercase;
+}
+
+:is(.hero, .how-we-work) {
+    background-color: var(--clr-dark-violet);
+    color: var(--clr-white);
 }
 
 .header {
@@ -144,4 +168,30 @@ body {
 .navbar__list {
     display: flex;
     gap: 1rem;
+}
+
+/* BENEFITS */
+
+.benefits__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* FOOTER */
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-media {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-bottom {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
