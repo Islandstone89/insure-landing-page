@@ -118,7 +118,7 @@ textarea:not([rows]) {
 /* UTILITIES */
 
 .flow {
-    --flow-space: 2em;
+    --flow-space: 4em;
 }
 
 .flow > * + * {
@@ -184,7 +184,18 @@ body {
     gap: 2rem;
 }
 
+.benefit {
+  --flow-space: 2em;
+}
+
+
+
 /* FOOTER */
+
+.footer {
+  background-color: var(--clr-very-light-gray);
+  padding-block: 2rem;
+}
 
 .footer-top {
     display: flex;
@@ -198,6 +209,11 @@ body {
 }
 
 .footer-bottom {
+  --flow-space: 3em;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+}
+
+.footer-bottom__list-item {
+  line-height: 1.6;
 }
