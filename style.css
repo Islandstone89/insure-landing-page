@@ -125,13 +125,18 @@ textarea:not([rows]) {
     margin-block-start: var(--flow-space, 1em);
 }
 
+.container {
+  width: 80%;
+  margin-inline: auto;
+}
+
 .serif {
     font-family: var(--ff-dm-serif-display);
     font-weight: var(--fw-400);
 }
 
 
-
+/* COMPONENTS */
 .btn {
     --border-color: var(--clr-white);
     border: 2px solid var(--border-color);
@@ -144,19 +149,19 @@ textarea:not([rows]) {
     
 }
 
+:is(.header, .footer) {
+  text-transform: uppercase;
+}
+
+:is(.hero, .how-we-work) {
+  background-color: var(--clr-dark-violet);
+  color: var(--clr-white);
+}
+
 /* GENERAL STYLING */
 
 body {
     font-family: var(--ff-karla);
-}
-
-:is(.header, .footer) {
-    text-transform: uppercase;
-}
-
-:is(.hero, .how-we-work) {
-    background-color: var(--clr-dark-violet);
-    color: var(--clr-white);
 }
 
 .header {
@@ -167,6 +172,7 @@ body {
 
 .navbar__list {
     display: flex;
+    align-items: center;
     gap: 1rem;
 }
 
