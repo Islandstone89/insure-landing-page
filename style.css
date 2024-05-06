@@ -183,12 +183,25 @@ body {
 
 .benefits__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: 2rem;
+
+    @media (width > 50rem) {
+      grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .benefit {
-  --flow-space: 2em;
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+  text-align: center;
+
+  @media (width > 50rem) {
+    justify-items: start;
+    text-align: left;
+  }
+  
 }
 
 
