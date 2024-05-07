@@ -245,6 +245,10 @@ body {
 .open-menu-btn{
   background-color: transparent;
   border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 /* HERO */
