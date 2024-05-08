@@ -273,17 +273,51 @@ body {
 /* HERO */
 
 .hero {
+  --grid-gap: 0;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   gap: var(--grid-gap);
 
   @media ( width > 50rem) {
+    --grid-gap: 2rem;
     padding-inline-end: 8rem;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 4fr auto;
   }
 }
+
+ 
+.hero::before {
+  content: url('images/bg-pattern-intro-left-mobile.svg');
+  position: absolute;
+  top: 500px;
+  left: 0;
+}
+
+@media (width > 50rem) {
+  .hero::before {
+    content: url('images/bg-pattern-intro-left-desktop.svg');
+    top: 400px;
+  }
+}
+
+.hero::after {
+  content: url('images/bg-pattern-intro-right-mobile.svg');
+  position: absolute;
+  bottom: -160px;
+  right: 0;
+}
+
+@media (width > 50rem) {
+  .hero::after {
+    content: url('images/bg-pattern-intro-right-desktop.svg');
+    top: 0;
+  }
+}
+
+
 
 .hero-image-wrapper {
   --container-padding: 0rem;
@@ -299,19 +333,24 @@ body {
   }
 }
 
+.hero-image img {
+  width: 100%;
+}
+
 .hero-text {
+  position: relative;
   padding-block: 6rem;
   grid-column: 1 / 2;
   grid-row: 2 / 3;
 
   @media ( width > 50rem) {
-    position: relative;
-    padding-inline-end: 0;
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    padding-block: 10rem 8rem; 
+      position: relative;
+      padding-inline-end: 0;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      padding-block: 10rem 8rem; 
+    }
   }
-}
 
 @media (width > 50rem) {
   .hero-text::before {
@@ -325,6 +364,9 @@ body {
   }
 }
 
+
+
+
 .main-heading {
   font-size: var(--fs-700);
   line-height: .9;
@@ -333,18 +375,26 @@ body {
 
 .hero-text__paragraph {
   --flow-space: 1rem;
+  line-height: 1.5;
 }
 
 .hero-btn {
-  --flow-space: 1.5rem;
+  --flow-space: 2rem;
+
+  @media (width > 50rem) {
+    --flow-space: 1.5rem;
+  }
 }
 
 
 /* BENEFITS */
 
 .benefits {
-  --flow-space: 18rem;
   color: var(--clr-very-dark-violet);
+
+  @media (width > 50rem) {
+    --flow-space: 18rem;
+  }
 }
 
 .benefits-heading {
@@ -410,12 +460,16 @@ body {
   flex-direction: column;
   gap: 2.5rem;
   align-items: center;
+  background-image: url('images/bg-pattern-how-we-work-mobile.svg');
+  background-repeat: no-repeat;
+  background-position: right top;
 
   @media (width > 50rem) {
     padding: 5rem;
     flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
+    background-image: url('images/bg-pattern-how-we-work-desktop.svg');
   }
 }
 
@@ -433,6 +487,12 @@ body {
   background-color: var(--clr-very-light-gray);
   color: var(--clr-dark-violet);
   padding-block: 4rem;
+  background-image: url('images/bg-pattern-footer-mobile.svg');
+  background-repeat: no-repeat;
+
+  @media (width > 50rem) {
+    background-image: url('images/bg-pattern-footer-desktop.svg');
+  }
 }
 
 .footer-top {
