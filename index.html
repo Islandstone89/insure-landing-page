@@ -13,11 +13,11 @@
 <body>
 
   <header class="header container">
-    <a href="#" class="logo-wrapper">
+    <a href="#" class="logo-wrapper header__logo-wrapper">
       <img src="images/logo.svg" alt="Insure - home" class="logo">
     </a><!-- end logo-wrapper -->
 
-    <nav class="navbar">
+    <nav class="navbar" id="navigation">
       <ul class="navbar__list">
 
         <li class="navbar__list-item">
@@ -39,11 +39,17 @@
       </ul><!-- end navbar__list -->
     </nav><!-- end navbar -->
 
-    <div class="menu">
-      <button class="open-menu-btn js-open-menu-btn" aria-expanded="false">
+    <div class="open-menu">
+      <button class="open-menu-btn js-open-menu-btn" aria-expanded="false" aria-controls="navigation">
         <img src="images/icon-hamburger.svg" alt="" class="open-menu-icon js-open-menu-icon">
       </button>
-    </div><!-- end menu -->
+    </div><!-- end open-menu -->
+
+    <div class="close-menu">
+      <button class="close-menu-btn js-close-menu-btn">
+        <img src="images/icon-close.svg" alt="" class="close-menu-icon js-close-menu-icon">
+      </button>
+    </div><!-- end close-menu -->
 
   </header><!-- end header -->
 
@@ -104,7 +110,7 @@
     <div class="footer-wrapper container flow">
 
       <div class="footer-top">
-        <a href="#" class="logo-wrapper">
+        <a href="#" class="logo-wrapper footer__logo-wrapper">
           <img src="images/logo.svg" alt="Insure - home" class="logo">
         </a><!-- end logo-wrapper -->
 
