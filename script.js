@@ -17,9 +17,9 @@ function closeMenu () {
    openMenuBtn.classList.toggle("hide")
 }
 
-/* Add event listeners */
-
+/* Add event listener on open menu button */
 openMenuBtn.addEventListener("click", openMenu);
 
+/* Add event listener on close menu button */
 closeMenuBtn.addEventListener("click", closeMenu);
 
